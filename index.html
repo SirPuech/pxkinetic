@@ -91,7 +91,7 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo Image (Replacing Text) -->
                 <div class="flex-shrink-0 cursor-pointer flex items-center" onclick="window.scrollTo(0,0)">
-                    <img src="PX-KINETIC-WOT.png" alt="PX KINETIC Logo" class="h-10 w-auto object-contain">
+                    <img src="PX-KINETIC-WOT.png" alt="PX KINETIC Logo" class="h-10 w-auto object-contain" onerror="this.outerHTML='<span class=\'font-header font-bold text-xl tracking-widest text-white\'>PX KINETIC</span>'">
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -160,18 +160,9 @@
             
             <!-- Video Container (16:9) -->
             <div class="aspect-video w-full bg-offblack rounded-lg border border-white/10 relative overflow-hidden group shadow-2xl shadow-burntOrange/10">
-                <!-- Replace 'YOUR_VIDEO_THUMBNAIL.jpg' with actual image URL -->
-                <!-- Replace iframe src with your YouTube Embed URL -->
-                <div class="absolute inset-0 flex items-center justify-center bg-zinc-900 group-hover:bg-zinc-800 transition-colors">
-                    <div class="text-center">
-                        <div class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:bg-burntOrange group-hover:scale-110 transition-all duration-300 cursor-pointer mx-auto mb-4">
-                            <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        <p class="text-dimGray text-sm uppercase tracking-widest">Click to Play Showreel</p>
-                    </div>
-                </div>
                 
-                iframe class="w-full h-full" src="https://youtu.be/Izgi1UK4fsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- แก้ไขแท็ก iframe ที่หายไป และเปลี่ยน URL เป็น /embed/ เพื่อให้เล่นวิดีโอได้ -->
+                <iframe class="w-full h-full relative z-10" src="https://www.youtube.com/embed/Izgi1UK4fsU?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                
             </div>
             
@@ -197,8 +188,17 @@
                 <!-- Project 1: Brand -->
                 <div class="group cursor-pointer">
                     <div class="aspect-[4/3] bg-offblack rounded-lg overflow-hidden relative mb-5 border border-white/5 group-hover:border-burntOrange transition-all duration-300 shadow-lg">
-                        <img src="https://youtu.be/_CjkfTN94R4" alt="Brand Promoter" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 text-xs font-bold text-amber border border-amber/30 rounded uppercase tracking-wider">Event Loop</div>
+                        <!-- แก้ไขให้ดึงภาพปก (Thumbnail) จากลิงก์วิดีโอ _CjkfTN94R4 มาแสดงผล -->
+                        <img src="https://img.youtube.com/vi/_CjkfTN94R4/maxresdefault.jpg" alt="Brand Promoter" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        
+                        <!-- ปุ่ม Play overlay (เพิ่มลูกเล่นให้รู้ว่าเป็นวิดีโอ) -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="w-16 h-16 bg-burntOrange/90 rounded-full flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 text-xs font-bold text-amber border border-amber/30 rounded uppercase tracking-wider z-10">Event Loop</div>
                     </div>
                     <h3 class="font-header text-2xl font-bold mb-2 group-hover:text-burntOrange transition-colors">Brand Promoter</h3>
                     <p class="text-dimGray text-sm leading-relaxed">สร้างคลิปวิดีโอสำหรับเปิดตัวแบรนด์ เพื่อสร้างความน่าเชื่อถือของแบรนด์</p>
@@ -207,8 +207,16 @@
                 <!-- Project 2: Opener -->
                 <div class="group cursor-pointer">
                     <div class="aspect-[4/3] bg-offblack rounded-lg overflow-hidden relative mb-5 border border-white/5 group-hover:border-burntOrange transition-all duration-300 shadow-lg">
-                        <img src="https://youtu.be/2cqwX1rlOlA" alt="Opening Titles" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 text-xs font-bold text-white border border-white/30 rounded uppercase tracking-wider">Opener</div>
+                        <!-- แก้ไขให้ดึงภาพปก (Thumbnail) จากลิงก์วิดีโอ 2cqwX1rlOlA มาแสดงผล -->
+                        <img src="https://img.youtube.com/vi/2cqwX1rlOlA/maxresdefault.jpg" alt="Opening Titles" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="w-16 h-16 bg-burntOrange/90 rounded-full flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 text-xs font-bold text-white border border-white/30 rounded uppercase tracking-wider z-10">Opener</div>
                     </div>
                     <h3 class="font-header text-2xl font-bold mb-2 group-hover:text-burntOrange transition-colors">Grand Opening Event</h3>
                     <p class="text-dimGray text-sm leading-relaxed">Event Opener 2025. เปิดตัวงานอีเวนท์ เน้นความตื่นเต้นเพื่อเตรียมพร้อมกิจกรรม</p>
@@ -217,8 +225,16 @@
                 <!-- Project 3: Advertisement -->
                 <div class="group cursor-pointer">
                     <div class="aspect-[4/3] bg-offblack rounded-lg overflow-hidden relative mb-5 border border-white/5 group-hover:border-burntOrange transition-all duration-300 shadow-lg">
-                        <img src="https://youtube.com/shorts/-5Hid5Xvsg4?si=UXseGX1FIKYn7DVJ" alt="Product Advertisement" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                        <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 text-xs font-bold text-blue-400 border border-blue-400/30 rounded uppercase tracking-wider">Advertisement</div>
+                        <!-- แก้ไขให้ดึงภาพปก (Thumbnail) จากลิงก์วิดีโอ -5Hid5Xvsg4 มาแสดงผล -->
+                        <img src="https://img.youtube.com/vi/-5Hid5Xvsg4/maxresdefault.jpg" alt="Product Advertisement" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="w-16 h-16 bg-burntOrange/90 rounded-full flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 text-xs font-bold text-blue-400 border border-blue-400/30 rounded uppercase tracking-wider z-10">Advertisement</div>
                     </div>
                     <h3 class="font-header text-2xl font-bold mb-2 group-hover:text-burntOrange transition-colors">Product Advertisement</h3>
                     <p class="text-dimGray text-sm leading-relaxed">Short Video Ad. สร้างวิดีโอโฆษณาสินค้าสั้นๆ กระชับ ดึงดูดความสนใจ เพิ่มยอดขายในเวลาอันสั้น</p>
@@ -238,8 +254,8 @@
                 <!-- Image Side -->
                 <div class="w-full lg:w-5/12 relative order-2 lg:order-1">
                     <div class="aspect-[3/4] rounded-lg bg-gray-800 relative overflow-hidden rim-light-container shadow-2xl">
-                        <!-- Replace with your actual portrait -->
-                        <img src="KRIDA-Profile.jpg" alt="Krida Kaewmeun" class="w-full h-full object-cover">
+                        <!-- ดึงรูป Profile มาแสดง -->
+                        <img src="KRIDA-Profile.jpg" alt="Krida Kaewmeun" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x800/222/FFF?text=Your+Portrait'">
                         <div class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
                             <p class="text-white font-header text-xl font-bold">Krida Kaewmeun (Puech)</p>
@@ -295,7 +311,7 @@
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <!-- Footer Logo -->
             <div class="flex justify-center mb-8">
-                <img src="PX-KINETIC-WOT.png" alt="PX KINETIC Logo" class="h-16 w-auto object-contain hover:scale-105 transition-transform duration-300">
+                <img src="PX-KINETIC-WOT.png" alt="PX KINETIC Logo" class="h-16 w-auto object-contain hover:scale-105 transition-transform duration-300" onerror="this.outerHTML='<span class=\'font-header font-bold text-2xl tracking-widest text-white\'>PX KINETIC</span>'">
             </div>
 
             <h2 class="font-header text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">READY TO ELEVATE?</h2>
@@ -307,7 +323,7 @@
                 Get a Quote
             </a>
 
-            <!-- Social Links (Updated) -->
+            <!-- Social Links -->
             <div class="flex justify-center space-x-10 mb-16">
                 <!-- Line -->
                 <a href="https://line.me/ti/p/DiJh8CqzvS" target="_blank" class="text-gray-500 hover:text-[#06C755] transition-colors transform hover:scale-110">
@@ -332,11 +348,9 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
     <script>
         const btn = document.querySelector('button[aria-controls="mobile-menu"]');
         const menu = document.querySelector('.md\\:block'); 
-        // Note: For actual mobile toggle in production, add a hidden div for mobile menu items.
     </script>
 </body>
 </html>
